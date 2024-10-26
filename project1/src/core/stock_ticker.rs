@@ -65,6 +65,7 @@ pub fn find_volatile_days(quotes: &Vec<Quote>) -> Vec<String> {
         }
     }
 
+    println!("Volatile days: {:?}", volatile_days);
     volatile_days
 }
 
@@ -87,7 +88,7 @@ pub fn find_min_max_closing_prices(quotes: &Vec<Quote>) -> (f64, NaiveDateTime, 
     (minp, mind, maxp, maxd)
 }
 
-pub fn functional_test(symbol: &String) {
+pub fn stock_analysis(symbol: &String) {
     let quotes = get_by_symbol(&symbol.to_string());
     
     if quotes.is_empty() {

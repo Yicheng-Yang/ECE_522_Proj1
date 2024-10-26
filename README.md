@@ -56,6 +56,7 @@ ___
 ---
 ## 5. Usage Instructions
 Navigate(**cd**) to the working directory via the command line and enter: ```cargo run -- -n (stock symbol)```, to run the project. **(stock symbol)** represents the name of the stock you want to query. For example, the following command will retrieve stock ticker data of *Apple Inc.*:```cargo run -- -n AAPL```
+You will see data regarding **volatile days** and **minimum/maximum prices**, and an image named **"plot.png"** will be generated in the root directory of the project.
 
 Additionally, after building with: ```cargo build (optional '-r')```, you can find the compiled program in the ```./target``` folder. You can also run the program directly using the following command: ```./target/debug(or release)/project -n AAPL```
 

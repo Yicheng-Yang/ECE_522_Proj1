@@ -21,11 +21,12 @@ pub fn print_closing_prices_and_dates(quotes: &Vec<Quote>, volatile_days: &Vec<S
     let date_strs: Vec<&str> = dates.iter().map(|s| s.as_str()).collect();
 
     plot(&date_strs, &closing_prices, &high, &low, &positions, min_price, max_price, stock_symbol)?;
+    
     Ok(())
 }
 
 fn plot(dates: &[&str], closing_prices: &[f64], high: &[f64], low: &[f64], positions: &[usize], min_price:f64, max_price:f64, stock_symbol:&str) -> Result<(), Box<dyn std::error::Error>> {
-    let root = BitMapBackend::new("plot.png", (1024, 768)).into_drawing_area();
+    let root = BitMapBackend::new("../../plot.png", (1024, 768)).into_drawing_area();
     root.fill(&WHITE)?;
 
     let ymin = closing_prices.iter().cloned().fold(f64::INFINITY, f64::min);
@@ -95,7 +96,7 @@ fn plot(dates: &[&str], closing_prices: &[f64], high: &[f64], low: &[f64], posit
             },
         ))?;
     }
-
+    
     Ok(())
 }
 
